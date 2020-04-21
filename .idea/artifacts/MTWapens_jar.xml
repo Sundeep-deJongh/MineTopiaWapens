@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="MTWapens:jar">
-    <output-path>$USER_HOME$/Desktop/skyfactor3/plugins</output-path>
-    <root id="archive" name="MTWapens.jar">
-      <element id="module-output" name="MTWapens" />
-    </root>
-  </artifact>
-</component>
