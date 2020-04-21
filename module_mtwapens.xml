@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_mtwapens" default="compile.module.mtwapens">
+  <dirname property="module.mtwapens.basedir" file="${ant.file.module_mtwapens}"/>
+  
+  <property name="module.jdk.home.mtwapens" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.mtwapens" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.mtwapens" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.mtwapens" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="mtwapens.output.dir" value="${module.mtwapens.basedir}/out/production/MTWapens"/>
+  <property name="mtwapens.testoutput.dir" value="${module.mtwapens.basedir}/out/test/MTWapens"/>
+  
+  <path id="mtwapens.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="mtwapens.module.production.classpath">
+    <path refid="${module.jdk.classpath.mtwapens}"/>
+    <pathelement location="C:/Users/patri/Desktop/skyfactor3/spigot.jar"/>
+  </path>
+  
+  <path id="mtwapens.runtime.production.module.classpath">
+    <pathelement location="${mtwapens.output.dir}"/>
+    <pathelement location="C:/Users/patri/Desktop/skyfactor3/spigot.jar"/>
+  </path>
+  
+  <path id="mtwapens.module.classpath">
+    <path refid="${module.jdk.classpath.mtwapens}"/>
+    <pathelement location="${mtwapens.output.dir}"/>
+    <pathelement location="C:/Users/patri/Desktop/skyfactor3/spigot.jar"/>
+  </path>
+  
+  <path id="mtwapens.runtime.module.classpath">
+    <pathelement location="${mtwapens.testoutput.dir}"/>
+    <pathelement location="${mtwapens.output.dir}"/>
+    <pathelement location="C:/Users/patri/Desktop/skyfactor3/spigot.jar"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.mtwapens">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.mtwapens">
+    <patternset refid="excluded.from.module.mtwapens"/>
+  </patternset>
+  
+  <path id="mtwapens.module.sourcepath">
+    <dirset dir="${module.mtwapens.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.mtwapens" depends="compile.module.mtwapens.production,compile.module.mtwapens.tests" description="Compile module MTWapens"/>
+  
+  <target name="compile.module.mtwapens.production" depends="register.custom.compilers" description="Compile module MTWapens; production classes">
+    <mkdir dir="${mtwapens.output.dir}"/>
+    <javac2 destdir="${mtwapens.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.mtwapens}/javac">
+      <compilerarg line="${compiler.args.mtwapens}"/>
+      <bootclasspath refid="mtwapens.module.bootclasspath"/>
+      <classpath refid="mtwapens.module.production.classpath"/>
+      <src refid="mtwapens.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.mtwapens"/>
+    </javac2>
+    
+    <copy todir="${mtwapens.output.dir}">
+      <fileset dir="${module.mtwapens.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.mtwapens.tests" depends="register.custom.compilers,compile.module.mtwapens.production" description="compile module MTWapens; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.mtwapens" description="cleanup module">
+    <delete dir="${mtwapens.output.dir}"/>
+    <delete dir="${mtwapens.testoutput.dir}"/>
+  </target>
+</project>

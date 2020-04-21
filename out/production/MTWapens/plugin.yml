@@ -1,0 +1,10 @@
+name: MinetopiaWapensPremium
+version: 1.0
+author: LittleDraily
+main: me.patrick.MTWapensPremium.Main
+description: MineTopiaWapens
+commands:
+  getwapens:
+    description: Krijg wapens
+  getkogels:
+    description: Krijg kogels

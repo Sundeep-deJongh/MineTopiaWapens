@@ -1,0 +1,62 @@
+Licence: "JOUW-LICENTIE"
+Wapens:
+  deserteagle:
+    type: WOOD_HOE
+    name: Desert Eagle
+    MTCustom: mtcustom
+    NBTtag: deserteagle_fullmodel
+    DefaultDura: 50
+    Damage: 1
+    Lore: Desert_Eagle
+    kogelcustom: mtcustom
+    kogelNBTtag: deserteagle_bullets
+    kogelname: Desert Eagle kogels
+    kogeltype: IRON_INGOT
+  glock19:
+    type: WOOD_HOE
+    name: Glock19
+    MTCustom: mtcustom
+    NBTtag: glock19_fullmodel
+    DefaultDura: 50
+    Damage: 1
+    Lore: Glock19
+    kogelcustom: mtcustom
+    kogelNBTtag: glock19_bullets
+    kogelname: Glock19 kogels
+    kogeltype: IRON_INGOT
+  m16a4:
+    type: WOOD_HOE
+    name: M16A4
+    MTCustom: mtcustom
+    NBTtag: m16a4_fullmodel
+    DefaultDura: 50
+    Damage: 1
+    Lore: Glock19
+    kogelcustom: mtcustom
+    kogelNBTtag: m16a4_bullets
+    kogelname: m16a4 kogels
+    kogeltype: IRON_INGOT
+  Magnum44:
+    type: WOOD_HOE
+    name: M16A4
+    MTCustom: mtcustom
+    NBTtag: magnum44_fullmodel
+    DefaultDura: 50
+    Damage: 1
+    Lore: Glock19
+    kogelcustom: mtcustom
+    kogelNBTtag: magnum44_bullets
+    kogelname: magnum44 kogels
+    kogeltype: IRON_INGOT
+  WaltherP99:
+    type: WOOD_HOE
+    name: WalterP99
+    MTCustom: mtcustom
+    NBTtag: waltherp99_fullmodel
+    DefaultDura: 50
+    Damage: 1
+    Lore: Glock19
+    kogelcustom: mtcustom
+    kogelNBTtag: waltherp99_bullets
+    kogelname: Walterp99 kogels
+    kogeltype: IRON_INGOT
