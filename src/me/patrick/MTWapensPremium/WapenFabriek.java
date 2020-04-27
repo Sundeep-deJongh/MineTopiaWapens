@@ -24,7 +24,7 @@ public class WapenFabriek implements Listener, CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String alias, String[] args) {
         Inventory wapengui = Bukkit.createInventory(null, 27, "WapenMenu");
         Player p = (Player) sender;
-        for (String wconfig : plugin.getConfig().getConfigurationSection("Items.").getKeys(false)) {
+        for (String wconfig : plugin.getConfig().getConfigurationSection("Wapens").getKeys(false)) {
 
             FileConfiguration config = plugin.getConfig();
 
