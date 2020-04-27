@@ -1,2 +1,2 @@
 MineTopiaWapens
-Clone deze reposetory en dan kun je aanpassen
+Clone deze repository en dan kun je aanpassen
