@@ -30,19 +30,19 @@ Wapens:
     NBTtag: m16a4_fullmodel
     DefaultDura: 50
     Damage: 1
-    Lore: Glock19
+    Lore: M16A4
     kogelcustom: mtcustom
     kogelNBTtag: m16a4_bullets
     kogelname: m16a4 kogels
     kogeltype: IRON_INGOT
   Magnum44:
     type: WOOD_HOE
-    name: M16A4
+    name: Magnum44
     MTCustom: mtcustom
     NBTtag: magnum44_fullmodel
     DefaultDura: 50
     Damage: 1
-    Lore: Glock19
+    Lore: Magnum44
     kogelcustom: mtcustom
     kogelNBTtag: magnum44_bullets
     kogelname: magnum44 kogels
@@ -54,7 +54,7 @@ Wapens:
     NBTtag: waltherp99_fullmodel
     DefaultDura: 50
     Damage: 1
-    Lore: Glock19
+    Lore: WalterP99
     kogelcustom: mtcustom
     kogelNBTtag: waltherp99_bullets
     kogelname: Walterp99 kogels
