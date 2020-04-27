@@ -1,7 +1,6 @@
 package me.patrick.MTWapensPremium;
 
 import org.bukkit.entity.Entity;
-import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Snowball;
 import org.bukkit.event.EventHandler;
@@ -14,7 +13,7 @@ public class WapenDamage {
         if (event.getDamager() instanceof Snowball) {
             Snowball snowball = (Snowball) event.getDamager();
             Entity hitBySnowball = event.getEntity();
-            LivingEntity shooter = (LivingEntity) snowball.getShooter();
+            //LivingEntity shooter = (LivingEntity) snowball.getShooter();
             if (hitBySnowball instanceof Player) {
                 event.setDamage(Double.parseDouble((snowball.getCustomName())));
             }
