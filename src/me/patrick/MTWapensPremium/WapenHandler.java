@@ -21,20 +21,25 @@ public class WapenHandler implements Listener {
         this.plugin = instance;
     }
 
-
     @EventHandler
     public void gun1(final PlayerInteractEvent e) {
         if (!(e.getAction() == Action.RIGHT_CLICK_AIR))
             return;
         Player p = e.getPlayer();
         for (String wconfig : plugin.getConfig().getConfigurationSection("Wapens.").getKeys(false)) {
-            ItemStack wapen = new ItemStack(Material.valueOf(String.valueOf(plugin.getConfig().getString("Wapens." + wconfig + ".type"))));
-            if (e.getPlayer().getItemInHand().getItemMeta().getDisplayName().contains(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("Wapens." + wconfig + ".name")))) {
-                if (e.getItem().getDurability() == 0) return;
-                ItemStack kogel = new ItemStack(Material.valueOf(String.valueOf(plugin.getConfig().getString( "Wapens." + wconfig + ".kogeltype"))));
-                kogel = NBTEditor.set(kogel, plugin.getConfig().getString( "Wapens." + wconfig + ".kogelNBTtag"), plugin.getConfig().getString( "Wapens." + wconfig + ".kogelcustom"));
+            ItemStack wapen = new ItemStack(
+                    Material.valueOf(String.valueOf(plugin.getConfig().getString("Wapens." + wconfig + ".type"))));
+            if (e.getPlayer().getItemInHand().getItemMeta().getDisplayName().contains(ChatColor
+                    .translateAlternateColorCodes('&', plugin.getConfig().getString("Wapens." + wconfig + ".name")))) {
+                if (e.getItem().getDurability() == 0)
+                    return;
+                ItemStack kogel = new ItemStack(Material
+                        .valueOf(String.valueOf(plugin.getConfig().getString("Wapens." + wconfig + ".kogeltype"))));
+                kogel = NBTEditor.set(kogel, plugin.getConfig().getString("Wapens." + wconfig + ".kogelNBTtag"),
+                        plugin.getConfig().getString("Wapens." + wconfig + ".kogelcustom"));
                 ItemMeta kogelmeta = kogel.getItemMeta();
-                kogelmeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString( "Wapens." + wconfig + ".kogelname")));
+                kogelmeta.setDisplayName(ChatColor.translateAlternateColorCodes('&',
+                        plugin.getConfig().getString("Wapens." + wconfig + ".kogelname")));
                 kogel.setItemMeta(kogelmeta);
 
                 if (!(p.getInventory().containsAtLeast(kogel, 1))) {
@@ -50,7 +55,6 @@ public class WapenHandler implements Listener {
                     Snowball s = e.getPlayer().launchProjectile(Snowball.class);
                     s.setCustomName(plugin.getConfig().getString("Wapens." + wconfig + ".Damage"));
                     s.setVelocity(s.getVelocity().multiply(2D));
-
 
                 }
 

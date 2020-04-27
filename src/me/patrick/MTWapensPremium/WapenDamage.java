@@ -8,6 +8,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 
 public class WapenDamage {
+    
     @EventHandler
     public void onEntityDamageByEntity(EntityDamageByEntityEvent event) {
         if (event.getDamager() instanceof Snowball) {
@@ -15,7 +16,7 @@ public class WapenDamage {
             Entity hitBySnowball = event.getEntity();
             LivingEntity shooter = (LivingEntity) snowball.getShooter();
             if (hitBySnowball instanceof Player) {
-                    event.setDamage(Double.parseDouble((snowball.getCustomName())));
+                event.setDamage(Double.parseDouble((snowball.getCustomName())));
             }
         }
     }
